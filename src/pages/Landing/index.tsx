@@ -28,8 +28,8 @@ export default function Landing(){
         
 
           <a href="#" className="give-classes">
-          <img src={giveClassesIcon} alt=""/>
-          Classes
+          <img src={giveClassesIcon} alt="dar aulas"/>
+          Dar aulas
           </a>
         </div>
 
