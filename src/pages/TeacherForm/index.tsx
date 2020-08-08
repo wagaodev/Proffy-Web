@@ -1,7 +1,14 @@
 import React from 'react';
+
+// Icons
+import warningIcon from '../../assets/icons/warning.svg';
+// Components
 import PageHeader from '../../components/PageHeader';
+import Input from '../../components/Input';
+import Textarea from '../../components/Textarea';
+import Select from '../../components/Select';
 
-
+// style
 import './styles.css'
 
 export default function TeacherForm(){
@@ -16,22 +23,54 @@ export default function TeacherForm(){
         <fieldset>
           <legend>Seus dados</legend>
 
-          <div className="input-block">
-            <label htmlFor="name">Nome completo</label>
-            <input type="text" id="name"></input>
-          </div>
-
-          <div className="input-block">
-            <label htmlFor="avatar">Avatar</label>
-            <input type="text" id="avatar"></input>
-          </div>
-
-          <div className="input-block">
-            <label htmlFor="whatsapp">WhatsApp</label>
-            <input type="text" id="whatsapp"></input>
-          </div>
+          <Input name="name" label="Nome completo" />
+          <Input name="avatar" label="Avatar" />
+          <Input name="whatsapp" label="Seu WhatsApp" />
+          <Textarea name="bio" label="Biografia" />
 
         </fieldset>
+
+        <fieldset>
+          <legend>Sobre a aula</legend>
+
+          <Select 
+          name="subject"
+          label="Matéria" 
+          options={[
+            { value: 'Artes', label: 'Artes'},
+            { value: 'Biologia', label: 'Biologia'},
+            { value: 'Ciências', label: 'Ciências'},
+            { value: 'Educação física', label: 'Educação física'},
+            { value: 'Física', label: 'Física'},
+            { value: 'Geografia', label: 'Geografia'},
+            { value: 'História', label: 'História'},
+            { value: 'Matemática', label: 'Matemática'},
+            { value: 'Português', label: 'Português'},
+            { value: 'Química', label: 'Química'},
+          ]}
+          />
+          <Input name="cost" label="Custo da sua hora por aula" />
+
+        </fieldset>
+
+        {/* <fieldset>
+          <legend>Horários disponíveis</legend>
+
+          <Input name="subject" label="Matéria" />
+          <Input name="cost" label="Custo da sua hora por aula" />
+
+        </fieldset> */}
+
+        <footer>
+          <p>
+            <img src={warningIcon} alt="Aviso importante"/>
+            Importante! <br/>
+            Preencha todos os dados
+          </p>
+          <button type="button" >
+            Salvar Cadastro
+          </button>
+        </footer>
       </main>
 
 
